@@ -29,17 +29,17 @@ headers = {
 }
 
 def get_user_input():
-    print("Welcome to the Uganda Language Translator 🇺🇬")
+    print("Welcome to the Translator")
     print("Languages supported:", ", ".join(lang.capitalize() for lang in languages))
 
     source = input("Enter source language: ").strip().lower()
     while source not in languages:
-        print("❌ Invalid source language. Try again.")
+        print("Invalid source language. Try again.")
         source = input("Enter source language: ").strip().lower()
 
     target = input("Enter target language: ").strip().lower()
     while target not in languages or target == source:
-        print("❌ Invalid or same as source language. Try again.")
+        print("Invalid or same as source language. Try again.")
         target = input("Enter target language: ").strip().lower()
 
     text = input(f"Enter text in {source.capitalize()}: ").strip()
@@ -62,7 +62,7 @@ def translate_text(source, target, text):
 def main():
     source, target, text = get_user_input()
     translated = translate_text(source, target, text)
-    print(f"\n📘 Translation ({source} → {target}): {translated}")
+    print(f"\n Translation ({source} → {target}): {translated}")
 
 if __name__ == "__main__":
     main()
